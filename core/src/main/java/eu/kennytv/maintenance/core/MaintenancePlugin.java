@@ -56,6 +56,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
@@ -109,6 +110,19 @@ public abstract class MaintenancePlugin implements Maintenance {
                 getLogger().log(Level.SEVERE, "Error while executing extra maintenance " + (maintenance ? "enable" : "disable") + " command: " + command, e);
             }
         }
+    }
+
+    public void addPingMessage(String message) {
+        if (Objects.nonNull(message)) {
+            settings.addPingMessage(message);
+            Objects.requireNonNull(Objects.requireNonNull(settings.getConfig().getSection("ping-message")).getStringList("messages")).add(message);
+            settings.saveConfig();
+        }
+    }
+
+    public void clearPingMessages() {
+        settings.clearPingMessages();
+        Objects.requireNonNull(Objects.requireNonNull(settings.getConfig().getSection("ping-message")).getStringList("messages")).clear();
     }
 
     public void serverActions(final boolean maintenance) {

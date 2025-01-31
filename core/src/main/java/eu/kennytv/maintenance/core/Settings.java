@@ -613,4 +613,12 @@ public class Settings implements eu.kennytv.maintenance.api.Settings {
 
     protected void loadExtraSettings() {
     }
+
+    public void addPingMessage(String message) {
+        pingMessages.add(message);
+    }
+
+    public void clearPingMessages() {
+        pingMessages.clear();
+    }
 }

@@ -19,22 +19,7 @@ package eu.kennytv.maintenance.core.command;
 
 import eu.kennytv.maintenance.core.MaintenancePlugin;
 import eu.kennytv.maintenance.core.Settings;
-import eu.kennytv.maintenance.core.command.subcommand.AbortTimerCommand;
-import eu.kennytv.maintenance.core.command.subcommand.DebugCommand;
-import eu.kennytv.maintenance.core.command.subcommand.DumpCommand;
-import eu.kennytv.maintenance.core.command.subcommand.EndtimerCommand;
-import eu.kennytv.maintenance.core.command.subcommand.HelpCommand;
-import eu.kennytv.maintenance.core.command.subcommand.MotdCommand;
-import eu.kennytv.maintenance.core.command.subcommand.ReloadCommand;
-import eu.kennytv.maintenance.core.command.subcommand.RemoveMotdCommand;
-import eu.kennytv.maintenance.core.command.subcommand.ScheduleTimerCommand;
-import eu.kennytv.maintenance.core.command.subcommand.SetMotdCommand;
-import eu.kennytv.maintenance.core.command.subcommand.StarttimerCommand;
-import eu.kennytv.maintenance.core.command.subcommand.ToggleCommand;
-import eu.kennytv.maintenance.core.command.subcommand.UpdateCommand;
-import eu.kennytv.maintenance.core.command.subcommand.WhitelistAddCommand;
-import eu.kennytv.maintenance.core.command.subcommand.WhitelistCommand;
-import eu.kennytv.maintenance.core.command.subcommand.WhitelistRemoveCommand;
+import eu.kennytv.maintenance.core.command.subcommand.*;
 import eu.kennytv.maintenance.core.util.SenderInfo;
 import java.time.Duration;
 import java.time.format.DateTimeParseException;
@@ -143,12 +128,11 @@ public abstract class MaintenanceCommand {
             }
         }
 
-        if (taskCheck) {
-            if (plugin.isTaskRunning()) {
+        if (taskCheck && plugin.isTaskRunning()) {
                 sender.send(settings.getMessage("timerAlreadyRunning"));
                 return null;
             }
-        }
+
 
         final long seconds = duration.getSeconds();
         if (seconds > MAX_TASK_DURATION_SECONDS) {
@@ -173,6 +157,7 @@ public abstract class MaintenanceCommand {
         add(new EndtimerCommand(plugin), "endtimer", "end");
         add(new ScheduleTimerCommand(plugin), "scheduletimer", "schedule");
         add(new AbortTimerCommand(plugin), "aborttimer", "abort");
+        add(new ModifyPingMessageCommand(plugin, "toggle"), "pingmessages", "pingmsg");
     }
 
     public List<String> getServersCompletion(final String s) {

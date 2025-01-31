@@ -100,5 +100,7 @@ helpSingleStarttimer: "<gold>/maintenance starttimer [server] <enable in> <gray>
 helpSingleScheduleTimer: "<gold>/maintenance scheduletimer [server] <enable in> <maintenance duration> <gray>(After the given time, e.g. 1h5m, maintenance mode will be enabled)"
 helpSingleToggle: "<gold>/maintenance <on/off> [server] <gray>(Enables/disables maintenance mode)"
 helpStatus: "<gold>/maintenance status <gray>(Lists all proxied servers, that are currently under maintenance)"
+pingMessagesCleared: "<gold>Ping messages cleared.</gold>"
+pingMessageAppended: "<gold>Added ping message/gold>"
 #Used for autoupdating the language file, do not change this value.
 language-version: 2
