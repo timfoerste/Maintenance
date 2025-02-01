@@ -157,7 +157,7 @@ public abstract class MaintenanceCommand {
         add(new EndtimerCommand(plugin), "endtimer", "end");
         add(new ScheduleTimerCommand(plugin), "scheduletimer", "schedule");
         add(new AbortTimerCommand(plugin), "aborttimer", "abort");
-        add(new ModifyPingMessageCommand(plugin, "toggle"), "pingmessages", "pingmsg");
+        add(new ModifyPingMessageCommand(plugin, "admin"), "pingmessages", "pingmsg");
     }
 
     public List<String> getServersCompletion(final String s) {
