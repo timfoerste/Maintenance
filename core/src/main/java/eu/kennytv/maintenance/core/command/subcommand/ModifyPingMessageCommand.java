@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class ModifyPingMessageCommand extends CommandInfo {
+public final class ModifyPingMessageCommand extends CommandInfo {
 
     public ModifyPingMessageCommand(MaintenancePlugin plugin, @Nullable String permission) {
         super(plugin, permission);
