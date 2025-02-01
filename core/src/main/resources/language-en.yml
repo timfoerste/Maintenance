@@ -93,6 +93,7 @@ helpUpdate: "<gold>/maintenance update <gray>(Remotely downloads the newest vers
 helpWhitelist: "<gold>/maintenance whitelist <gray>(Shows all whitelisted players for the maintenance mode)"
 helpWhitelistAdd: "<gold>/maintenance add <name/uuid> <gray>(Adds the player to the maintenance whitelist, so they can join the server even though maintenance is enabled)"
 helpWhitelistRemove: "<gold>/maintenance remove <name/uuid> <gray>(Removes the player from the maintenance whitelist)"
+helpModifyPingMessage: "<gold>/maintenance pingmsg clear<gray> Clears Ping Message List<br><gold>/maintenance pingmsg add [message]<gray> Adds Ping message. Use <ws> for whitespaces."
 #Messages for the Bungee/Velocity part, you can ignore them if you use the plugin on Paper/Sponge
 helpAbortSingleTimer: "<gold>/maintenance aborttimer [server] <gray>(If running, the current timer will be aborted)"
 helpSingleEndtimer: "<gold>/maintenance endtimer [server] <disable in> <gray>(After the given time, e.g. 1h5m, maintenance mode will be disabled)"
@@ -101,6 +102,6 @@ helpSingleScheduleTimer: "<gold>/maintenance scheduletimer [server] <enable in> 
 helpSingleToggle: "<gold>/maintenance <on/off> [server] <gray>(Enables/disables maintenance mode)"
 helpStatus: "<gold>/maintenance status <gray>(Lists all proxied servers, that are currently under maintenance)"
 pingMessagesCleared: "<gold>Ping messages cleared.</gold>"
-pingMessageAppended: "<gold>Added ping message/gold>"
+pingMessageAppended: "<gold>Added ping message</gold>"
 #Used for autoupdating the language file, do not change this value.
 language-version: 2

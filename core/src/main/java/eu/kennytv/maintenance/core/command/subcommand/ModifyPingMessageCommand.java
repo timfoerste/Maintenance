@@ -21,7 +21,11 @@ public class ModifyPingMessageCommand extends CommandInfo {
             plugin.clearPingMessages();
             sender.send(getMessage("pingMessagesCleared"));
         } else if (args[1].equalsIgnoreCase("add") && Objects.nonNull(args[2])) {
-            plugin.addPingMessage(args[2]);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 2; i < args.length; i++) {
+                sb.append(args[i]);
+            }
+            plugin.addPingMessage(sb.toString().replace("<ws>", " "));
             sender.send(getMessage("pingMessageAppended"));
         } else {
             sender.send(getHelpMessage());
