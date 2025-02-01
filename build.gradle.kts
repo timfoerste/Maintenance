@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group = "eu.kennytv.maintenance"
-    version = property("projectVersion") as String // from gradle.properties
+    version = property("projectVersion") as String + "_" + latestCommitHash() // from gradle.properties
     description = "Enable maintenance mode with a custom maintenance motd and icon."
 }
 
